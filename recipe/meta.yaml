@@ -23,7 +23,7 @@ requirements:
     - python >={{ python_min }}
     - jupyverse-api >=0.10.0,<0.11.0
     - anyio
-    - akernel >=0.3.2
+    - akernel >=0.3.4
 
 test:
   requires:
