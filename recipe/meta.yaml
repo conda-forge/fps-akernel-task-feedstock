@@ -1,5 +1,5 @@
 {% set name = "fps-akernel-task" %}
-{% set version = "0.1.7" %}
+{% set version = "0.1.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fps_akernel_task-{{ version }}.tar.gz
-  sha256: e46c9f4c69b7a4950ec848595c567b2adfc44d72547c67ff88880e12d5f6beb6
+  sha256: 736e7af3e0d7749795625d8803ff998b4e9f165ed0f3a1450926d9ec9491810e
 
 build:
   noarch: python
