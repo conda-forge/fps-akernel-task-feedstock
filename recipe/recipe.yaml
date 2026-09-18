@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: fps-akernel-task
+  version: "0.2.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fps_akernel_task-${{ version }}.tar.gz
+  sha256: bb5080dbf918644f2fcde6a0fdbf6f03f238985b2971e49587df34ee6c5df269
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - hatchling
+  run:
+    - python >=${{ python_min }}
+    - jupyverse-api >=0.15.0,<0.16.0
+    - anyio
+    - akernel >=0.4.0
+
+tests:
+  - python:
+      imports:
+        - fps_akernel_task
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: An FPS plugin for the kernel task API
+  license_file: LICENSE
+  license: MIT
+  homepage: https://github.com/davidbrochart/akernel/tree/main/plugins/akernel_task
+  repository: https://github.com/davidbrochart/akernel/tree/main/plugins/akernel_task
+
+extra:
+  recipe-maintainers:
+    - davidbrochart
