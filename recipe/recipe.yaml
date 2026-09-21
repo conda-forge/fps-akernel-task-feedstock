@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: fps-akernel-task
-  version: "0.2.0"
+  version: "0.2.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fps_akernel_task-${{ version }}.tar.gz
-  sha256: bb5080dbf918644f2fcde6a0fdbf6f03f238985b2971e49587df34ee6c5df269
+  sha256: 98ef9ec89f1227d09b0469f3c9adeb01e1f1fa6f30ccb6add9dcbeed8891d7ed
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
@@ -26,7 +26,7 @@ requirements:
     - python >=${{ python_min }}
     - jupyverse-api >=0.15.0,<0.16.0
     - anyio
-    - akernel >=0.4.0
+    - akernel >=0.4.1
 
 tests:
   - python:
